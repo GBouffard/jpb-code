@@ -1,0 +1,16 @@
+{
+    "editor.insertSpaces": true,
+    "editor.tabSize": 4,
+    "editor.rulers": [120],
+    "[javascript]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[scss]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "editor.formatOnSave": false,
+    "css.validate": false,
+    "scss.validate": false,
+}
