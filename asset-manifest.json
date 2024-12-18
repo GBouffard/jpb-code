@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/jpb-code/static/css/main.3a32851d.css",
+    "main.js": "/jpb-code/static/js/main.87c119aa.js",
+    "static/js/453.3c854037.chunk.js": "/jpb-code/static/js/453.3c854037.chunk.js",
+    "static/media/lr.jpg": "/jpb-code/static/media/lr.567241adc6f18cda36e6.jpg",
+    "index.html": "/jpb-code/index.html",
+    "main.3a32851d.css.map": "/jpb-code/static/css/main.3a32851d.css.map",
+    "main.87c119aa.js.map": "/jpb-code/static/js/main.87c119aa.js.map",
+    "453.3c854037.chunk.js.map": "/jpb-code/static/js/453.3c854037.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3a32851d.css",
+    "static/js/main.87c119aa.js"
+  ]
+}
