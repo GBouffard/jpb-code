@@ -11,6 +11,11 @@ const cipher = {
   e: 'ESqetGMCsw'
 }
 
+const invertedCipher = Object.keys(cipher).reduce((obj, key) => {
+  obj[cipher[key]] = key
+  return obj
+}, {})
+
 const splitIntoPairs = str => {
   let result = []
   for (let i = 0; i < str.length; i += 2) {
@@ -18,6 +23,15 @@ const splitIntoPairs = str => {
   }
   return result
 }
+
+const invertedKeys = Object.keys(invertedCipher)
+const encodeCode = input =>
+  [...input]
+    .map(letter => {
+      const letters = invertedKeys.find(element => element.indexOf(letter) > -1)
+      return invertedCipher[letters] + letters.indexOf(letter)
+    })
+    .join('')
 
 const decodeCode = input =>
   splitIntoPairs(input)
@@ -32,6 +46,10 @@ const App = () => {
     setCodeInput(value)
   }
 
+  const encode = input => {
+    setResult(encodeCode(input))
+  }
+
   const decode = input => {
     setResult(decodeCode(input))
   }
@@ -40,7 +58,14 @@ const App = () => {
     <div className="App flex h-full w-full flex-col items-center justify-center bg-cover">
       <div className="relative flex min-h-96 min-w-96 flex-col items-center justify-start rounded-xl border-2 border-neutral-900 bg-white bg-opacity-85">
         <InputText value={codeInput} onChange={onCodeInputChange} />
-        <Button onClick={() => decode(codeInput)} />
+        <div>
+          <Button onClick={() => encode(codeInput)} classname="hover:bg-red-900 bg-red-700">
+            Encoder
+          </Button>
+          <Button onClick={() => decode(codeInput)} classname="hover:bg-black bg-neutral-700">
+            Décoder
+          </Button>
+        </div>
         <div className="absolute bottom-0 p-12 text-3xl [text-shadow:_0_4px_8px_rgb(199_202_141_/_0.8)]">
           {result}
         </div>
